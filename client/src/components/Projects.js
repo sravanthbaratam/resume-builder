@@ -1,25 +1,36 @@
 import React, {Component} from "react";
-import {TextField, Button, Container, Divider} from "@mui/material";
-import {Card, CardHeader, CardContent} from "@mui/material";
+import {
+  TextField,
+  Button,
+  Container,
+  Card,
+  CardHeader,
+  CardContent,
+  Divider,
+  Paper,
+  Grid,
+  InputAdornment
+} from "@mui/material";
 import axios from "axios";
 import {saveAs} from "file-saver";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import LinkIcon from "@mui/icons-material/Link";
-import TitleIcon from "@mui/icons-material/Title";
-import DescriptionIcon from "@mui/icons-material/Description";
-import InputAdornment from "@mui/material/InputAdornment";
+import {
+  NavigateNext as NavigateNextIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  Link as LinkIcon,
+  Title as TitleIcon,
+  Description as DescriptionIcon
+} from "@mui/icons-material";
 import {Row, Col} from "react-bootstrap";
-import {Paper, Grid} from "@mui/material";
-// import { withStyles } from '@mui/styles'
-// const styles = theme => ({
-//   margin: {
-//     margin: theme.spacing.unit * 1.5,
-//   },
-//   padding: {
-//     padding: theme.spacing.unit,
-//   },
-// });
+import {withStyles} from "tss-react/mui";
+
+const styles = theme => ({
+  margin: {
+    margin: theme.spacing.unit * 1.5
+  },
+  padding: {
+    padding: theme.spacing.unit
+  }
+});
 
 class Projects extends Component {
   continue = e => {
@@ -53,16 +64,16 @@ class Projects extends Component {
 
   render() {
     const {values} = this.props;
-    // const { classes } = this.props;
+    const {classes} = this.props;
 
     return (
-      <Paper>
+      <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Projects Developed" />
         </Card>
         <CardContent>
-          <div>
-            <Grid container spacing={2} alignItems="center">
+          <div className={classes.margin}>
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item xs={12} lg={12}>
                 <h5>Project 1</h5>
               </Grid>
@@ -128,7 +139,7 @@ class Projects extends Component {
             <br />
             <Divider />
             <br />
-            <Grid container spacing={2} alignItems="center">
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item xs={12} lg={12}>
                 <h5>Project 2</h5>
               </Grid>
@@ -194,7 +205,7 @@ class Projects extends Component {
             <br />
             <Divider />
             <br />
-            <Grid container spacing={2} alignItems="center">
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item xs={12} lg={12}>
                 <h5>Project 3</h5>
               </Grid>
@@ -256,7 +267,7 @@ class Projects extends Component {
             </Grid>
           </div>
         </CardContent>
-        <Container>
+        <Container className={classes.margin}>
           <Row>
             <Col xs={4} />
             <Col xs={2}>
@@ -288,4 +299,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default withStyles(Projects, styles);

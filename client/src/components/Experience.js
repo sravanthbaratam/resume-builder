@@ -1,27 +1,38 @@
 import React, {Component} from "react";
-import {TextField, Button, Container, Divider} from "@mui/material";
-import {Card, CardHeader, CardContent} from "@mui/material";
+import {
+  TextField,
+  Button,
+  Container,
+  Divider,
+  Paper,
+  Grid,
+  Card,
+  CardHeader,
+  CardContent,
+  InputAdornment
+} from "@mui/material";
 import axios from "axios";
 import {saveAs} from "file-saver";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import DescriptionIcon from "@mui/icons-material/Description";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import TimelapseIcon from "@mui/icons-material/Timelapse";
-import EventSeatIcon from "@mui/icons-material/EventSeat";
-import BusinessIcon from "@mui/icons-material/Business";
-import InputAdornment from "@mui/material/InputAdornment";
+import {
+  NavigateNext as NavigateNextIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  Description as DescriptionIcon,
+  CheckCircle as CheckCircleIcon,
+  Timelapse as TimelapseIcon,
+  EventSeat as EventSeatIcon,
+  Business as BusinessIcon
+} from "@mui/icons-material";
 import {Row, Col} from "react-bootstrap";
-import {Paper, Grid} from "@mui/material";
-// import { withStyles } from '@mui/styles'
-// const styles = theme => ({
-//   margin: {
-//     margin: theme.spacing.unit * 1.5,
-//   },
-//   padding: {
-//     padding: theme.spacing.unit,
-//   },
-// });
+import {withStyles} from "tss-react/mui";
+
+const styles = theme => ({
+  margin: {
+    margin: theme.spacing.unit * 1.5
+  },
+  padding: {
+    padding: theme.spacing.unit
+  }
+});
 
 class Experience extends Component {
   continue = e => {
@@ -55,16 +66,16 @@ class Experience extends Component {
 
   render() {
     const {values} = this.props;
-    // const { classes } = this.props;
+    const {classes} = this.props;
 
     return (
-      <Paper>
+      <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Experience Details" />
         </Card>
         <CardContent>
-          <div>
-            <Grid container spacing={2} alignItems="center">
+          <div className={classes.margin}>
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid
                 item
                 xs={12}
@@ -161,7 +172,7 @@ class Experience extends Component {
             <br />
             <Divider />
             <br />
-            <Grid container spacing={2} alignItems="flex-start">
+            <Grid container spacing={2} alignItems="flex-start" lg={12}>
               <Grid
                 item
                 xs={12}
@@ -258,7 +269,7 @@ class Experience extends Component {
             </Grid>
           </div>
         </CardContent>
-        <Container>
+        <Container className={classes.margin}>
           <Row>
             <Col xs={4} />
             <Col xs={2}>
@@ -290,4 +301,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default withStyles(Experience, styles);

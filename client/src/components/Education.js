@@ -6,25 +6,29 @@ import {
   Divider,
   InputAdornment,
   Paper,
-  Grid
+  Grid,
+  Card,
+  CardHeader,
+  CardContent
 } from "@mui/material";
-import {Card, CardHeader, CardContent} from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import SchoolIcon from "@mui/icons-material/School";
-import DateRangeIcon from "@mui/icons-material/DateRange";
+import {
+  NavigateNext as NavigateNextIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  School as SchoolIcon,
+  DateRange as DateRangeIcon
+} from "@mui/icons-material";
 import {Row, Col} from "react-bootstrap";
+import {withStyles} from "tss-react/mui";
 import "date-fns";
-// import { withStyles } from '@mui/styles'
 
-// const styles = theme => ({
-//   margin: {
-//     margin: theme.spacing.unit * 1.5,
-//   },
-//   padding: {
-//     padding: theme.spacing.unit,
-//   },
-// });
+const styles = theme => ({
+  margin: {
+    margin: theme.spacing.unit * 1.5
+  },
+  padding: {
+    padding: theme.spacing.unit
+  }
+});
 
 class Profile extends Component {
   continue = e => {
@@ -39,16 +43,16 @@ class Profile extends Component {
 
   render() {
     const {values} = this.props;
-    // const { classes } = this.props;
+    const {classes} = this.props;
 
     return (
-      <Paper>
+      <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Education Details" />
         </Card>
         <CardContent>
-          <div>
-            <Grid container spacing={2} alignItems="center">
+          <div className={classes.margin}>
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item md={4} sm={12} xs={12} lg={4}>
                 <TextField
                   margin="dense"
@@ -139,7 +143,7 @@ class Profile extends Component {
             <br />
             <Divider />
             <br />
-            <Grid container spacing={2} alignItems="center">
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item md={4} sm={12} xs={12} lg={4}>
                 <TextField
                   margin="dense"
@@ -234,7 +238,7 @@ class Profile extends Component {
             </Grid>
           </div>
         </CardContent>
-        <Container>
+        <Container className={classes.margin}>
           <Row>
             <Col xs={4} />
             <Col xs={2}>
@@ -266,4 +270,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default withStyles(Profile, styles);

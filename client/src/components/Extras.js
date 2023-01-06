@@ -1,25 +1,35 @@
 import React, {Component} from "react";
-import {TextField, Button, Container, Divider} from "@mui/material";
-import {Card, CardHeader, CardContent} from "@mui/material";
+import {
+  TextField,
+  Button,
+  Container,
+  Divider,
+  Card,
+  CardHeader,
+  CardContent,
+  InputAdornment,
+  Paper,
+  Grid
+} from "@mui/material";
 import {axiosInstance} from "../config";
 import {saveAs} from "file-saver";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import InputAdornment from "@mui/material/InputAdornment";
-import GetAppIcon from "@mui/icons-material/GetApp";
+import {
+  NavigateNext as NavigateNextIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  CheckCircle as CheckCircleIcon,
+  GetApp as GetAppIcon
+} from "@mui/icons-material";
 import {Row, Col} from "react-bootstrap";
-import {Paper, Grid} from "@mui/material";
-// import { withStyles } from '@mui/styles'
+import {withStyles} from "tss-react/mui";
 
-// const styles = (theme) => ({
-// 	margin: {
-// 		margin: theme.spacing.unit * 1.5,
-// 	},
-// 	padding: {
-// 		padding: theme.spacing.unit,
-// 	},
-// });
+const styles = theme => ({
+  margin: {
+    margin: theme.spacing.unit * 1.5
+  },
+  padding: {
+    padding: theme.spacing.unit
+  }
+});
 
 class Experience extends Component {
   continue = e => {
@@ -55,15 +65,15 @@ class Experience extends Component {
 
   render() {
     const {values} = this.props;
-    // const { classes } = this.props;
+    const {classes} = this.props;
 
     return (
-      <Paper>
+      <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Extra Details" />
         </Card>
         <CardContent>
-          <div>
+          <div className={classes.margin}>
             <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid
                 item
@@ -271,7 +281,7 @@ class Experience extends Component {
             </Grid>
           </div>
         </CardContent>
-        <Container>
+        <Container className={classes.margin}>
           <Row>
             <Col xs={4} />
             <Col xs={2}>
@@ -313,4 +323,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default withStyles(Experience, styles);

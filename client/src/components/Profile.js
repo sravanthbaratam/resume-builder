@@ -1,28 +1,38 @@
 import React, {Component} from "react";
-import {TextField, Button, Container} from "@mui/material";
-import {Card, CardHeader, CardContent} from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import LanguageIcon from "@mui/icons-material/Language";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import InputAdornment from "@mui/material/InputAdornment";
+import {
+  TextField,
+  Button,
+  Container,
+  Card,
+  CardHeader,
+  CardContent,
+  InputAdornment,
+  Paper,
+  Grid
+} from "@mui/material";
+import {
+  NavigateNext as NavigateNextIcon,
+  NavigateBefore as NavigateBeforeIcon,
+  Email as EmailIcon,
+  Phone as PhoneIcon,
+  Language as LanguageIcon,
+  GitHub as GitHubIcon,
+  LinkedIn as LinkedInIcon,
+  Twitter as TwitterIcon,
+  Facebook as FacebookIcon,
+  Instagram as InstagramIcon
+} from "@mui/icons-material";
 import {Row, Col} from "react-bootstrap";
-import {Paper, Grid} from "@mui/material";
-// import { withStyles } from '@mui/styles'
-// const styles = theme => ({
-//   margin: {
-//     margin: theme.spacing.unit * 1,
-//   },
-//   padding: {
-//     padding: theme.spacing.unit,
-//   },
-// });
+import {withStyles} from "tss-react/mui";
+
+const styles = theme => ({
+  margin: {
+    margin: theme.spacing.unit * 1
+  },
+  padding: {
+    padding: theme.spacing.unit
+  }
+});
 
 class Profile extends Component {
   continue = e => {
@@ -32,15 +42,15 @@ class Profile extends Component {
 
   render() {
     const {values} = this.props;
-    // const classes = { padding: 10 };
+    const {classes} = this.props;
     return (
-      <Paper>
+      <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Personal Details" />
         </Card>
         <CardContent>
-          <div>
-            <Grid container spacing={2} alignItems="center">
+          <div className={classes.margin}>
+            <Grid container spacing={2} alignItems="center" lg={12}>
               <Grid item md={6} sm={12} xs={12} lg={6}>
                 <TextField
                   margin="dense"
@@ -214,7 +224,7 @@ class Profile extends Component {
                 />
               </Grid>
             </Grid>
-            <Container>
+            <Container className={classes.margin}>
               <Row>
                 <Col lg={3} xs={0} />
                 <Col lg={3} xs={5}>
@@ -257,4 +267,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default withStyles(Profile, styles);
