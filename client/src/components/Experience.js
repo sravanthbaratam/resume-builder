@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { TextField, Button, Container, Divider } from '@mui/material';
-import { Card, CardHeader, CardContent } from '@mui/material';
-import axios from 'axios';
-import { saveAs } from 'file-saver';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import DescriptionIcon from '@mui/icons-material/Description';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import TimelapseIcon from '@mui/icons-material/Timelapse';
-import EventSeatIcon from '@mui/icons-material/EventSeat';
-import BusinessIcon from '@mui/icons-material/Business';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Row, Col } from 'react-bootstrap';
-import { Paper, Grid } from '@mui/material';
+import React, {Component} from "react";
+import {TextField, Button, Container, Divider} from "@mui/material";
+import {Card, CardHeader, CardContent} from "@mui/material";
+import axios from "axios";
+import {saveAs} from "file-saver";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import DescriptionIcon from "@mui/icons-material/Description";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import TimelapseIcon from "@mui/icons-material/Timelapse";
+import EventSeatIcon from "@mui/icons-material/EventSeat";
+import BusinessIcon from "@mui/icons-material/Business";
+import InputAdornment from "@mui/material/InputAdornment";
+import {Row, Col} from "react-bootstrap";
+import {Paper, Grid} from "@mui/material";
 // import { withStyles } from '@mui/styles'
 // const styles = theme => ({
 //   margin: {
@@ -36,12 +36,12 @@ class Experience extends Component {
 
   createAndDownloadPDF = () => {
     axios
-      .post('/create-pdf', this.props.values)
+      .post("/create-pdf", this.props.values)
       .then(() => {
         axios
-          .get('fetch-pdf', { responseType: 'blob' })
+          .get("fetch-pdf", {responseType: "blob"})
           .then(res => {
-            const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+            const pdfBlob = new Blob([res.data], {type: "application/pdf"});
             saveAs(pdfBlob, `${this.props.values.firstname}'s Resume.pdf`);
           })
           .catch(err => {
@@ -54,16 +54,16 @@ class Experience extends Component {
   };
 
   render() {
-    const { values } = this.props;
+    const {values} = this.props;
     // const { classes } = this.props;
 
     return (
-      <Paper >
+      <Paper>
         <Card>
           <CardHeader title="Experience Details" />
         </Card>
         <CardContent>
-          <div >
+          <div>
             <Grid container spacing={2} alignItems="center">
               <Grid
                 item
@@ -85,7 +85,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="institute1"
                   label="Institue/Organisation"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.institute1}
                   onChange={this.props.handleChange}
@@ -94,7 +94,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <BusinessIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -104,7 +104,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="position1"
                   label="Position"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.position1}
                   onChange={this.props.handleChange}
@@ -113,7 +113,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <EventSeatIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -124,7 +124,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="duration1"
                   label="Duration"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.duration1}
                   onChange={this.props.handleChange}
@@ -133,7 +133,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <TimelapseIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -143,7 +143,7 @@ class Experience extends Component {
                   margin="dense"
                   label="Description"
                   variant="outlined"
-                  style={{ width: '97%' }}
+                  style={{width: "97%"}}
                   name="experienceDescription1"
                   required
                   value={values.experienceDescription1}
@@ -153,7 +153,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <DescriptionIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -182,7 +182,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="institute2"
                   label="Institue/Organisation"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.institute2}
                   onChange={this.props.handleChange}
@@ -191,7 +191,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <BusinessIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -201,7 +201,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="position2"
                   label="Position"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.position2}
                   onChange={this.props.handleChange}
@@ -210,7 +210,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <EventSeatIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -221,7 +221,7 @@ class Experience extends Component {
                   variant="outlined"
                   name="duration2"
                   label="Duration"
-                  style={{ width: '90%' }}
+                  style={{width: "90%"}}
                   required
                   value={values.duration2}
                   onChange={this.props.handleChange}
@@ -230,7 +230,7 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <TimelapseIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -240,7 +240,7 @@ class Experience extends Component {
                   margin="dense"
                   label="Description"
                   variant="outlined"
-                  style={{ width: '97%' }}
+                  style={{width: "97%"}}
                   rows={3}
                   name="experienceDescription2"
                   required
@@ -251,14 +251,14 @@ class Experience extends Component {
                       <InputAdornment position="start">
                         <DescriptionIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
             </Grid>
           </div>
         </CardContent>
-        <Container >
+        <Container>
           <Row>
             <Col xs={4} />
             <Col xs={2}>

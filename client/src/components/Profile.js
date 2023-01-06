@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import { TextField, Button, Container } from '@mui/material';
-import { Card, CardHeader, CardContent } from '@mui/material';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import LanguageIcon from '@mui/icons-material/Language';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Row, Col } from 'react-bootstrap';
-import { Paper, Grid } from '@mui/material';
+import React, {Component} from "react";
+import {TextField, Button, Container} from "@mui/material";
+import {Card, CardHeader, CardContent} from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LanguageIcon from "@mui/icons-material/Language";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import InputAdornment from "@mui/material/InputAdornment";
+import {Row, Col} from "react-bootstrap";
+import {Paper, Grid} from "@mui/material";
 // import { withStyles } from '@mui/styles'
 // const styles = theme => ({
 //   margin: {
@@ -31,23 +31,23 @@ class Profile extends Component {
   };
 
   render() {
-    const { values } = this.props;
+    const {values} = this.props;
     // const classes = { padding: 10 };
     return (
-      <Paper >
+      <Paper>
         <Card>
           <CardHeader title="Personal Details" />
         </Card>
         <CardContent>
-          <div >
-            <Grid container spacing={2} alignItems="center" >
+          <div>
+            <Grid container spacing={2} alignItems="center">
               <Grid item md={6} sm={12} xs={12} lg={6}>
                 <TextField
                   margin="dense"
                   variant="outlined"
                   name="firstname"
                   label="First Name"
-                  style={{ width: '80%' }}
+                  style={{width: "80%"}}
                   required
                   value={values.firstname}
                   onChange={this.props.handleChange}
@@ -58,7 +58,7 @@ class Profile extends Component {
                   margin="dense"
                   label="Last Name"
                   variant="outlined"
-                  style={{ width: '80%' }}
+                  style={{width: "80%"}}
                   name="lastname"
                   required
                   value={values.lastname}
@@ -73,7 +73,7 @@ class Profile extends Component {
                   variant="outlined"
                   name="email"
                   required
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.email}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -81,7 +81,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <EmailIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -92,7 +92,7 @@ class Profile extends Component {
                   label="Phone Number"
                   variant="outlined"
                   name="phone"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.phone}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -100,7 +100,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <PhoneIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -111,7 +111,7 @@ class Profile extends Component {
                   label="Your Website"
                   variant="outlined"
                   name="website"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.website}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -119,7 +119,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <LanguageIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -129,7 +129,7 @@ class Profile extends Component {
                   label="GitHub"
                   variant="outlined"
                   name="github"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.github}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -137,7 +137,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <GitHubIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -147,7 +147,7 @@ class Profile extends Component {
                   label="Linked In"
                   variant="outlined"
                   name="linkedin"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.linkedin}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -155,7 +155,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <LinkedInIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -165,7 +165,7 @@ class Profile extends Component {
                   label="Twitter"
                   variant="outlined"
                   name="twitter"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.twitter}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -173,7 +173,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <TwitterIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -183,7 +183,7 @@ class Profile extends Component {
                   label="Facebook"
                   variant="outlined"
                   name="facebook"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.facebook}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -191,7 +191,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <FacebookIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
@@ -201,7 +201,7 @@ class Profile extends Component {
                   label="Instagram"
                   variant="outlined"
                   name="instagram"
-                  style={{ alignItems: 'left', width: '80%' }}
+                  style={{alignItems: "left", width: "80%"}}
                   value={values.instagram}
                   onChange={this.props.handleChange}
                   InputProps={{
@@ -209,7 +209,7 @@ class Profile extends Component {
                       <InputAdornment position="end">
                         <InstagramIcon />
                       </InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Grid>
