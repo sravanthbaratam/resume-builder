@@ -13,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.20.0",
     "concurrently": "^7.2.0",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "handlebars": "^4.7.7",
     "puppeteer": "^19.4.1"

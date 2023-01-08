@@ -1,9 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors')
+
 // const pdf = require("html-pdf");
 const path = require("path");
 
 const app = express();
+app.use(cors())
 
 const pdfTemplate = require("./documents");
 const puppeteer = require('puppeteer');
