@@ -58,16 +58,17 @@ app.post("/create-pdf", async (req, res) => {
 		margin: { top: '100px', right: '50px', bottom: '100px', left: '50px' },
 		printBackground: true,
 		format: 'A4',
-	}).then(() => res.send(Promise.resolve()))
-		.catch((err) => {
+	}).then(async () => { await browser.close(); res.send(Promise.resolve()) })
+		.catch(async (err) => {
+			await browser.close();
 			console.log(err)
 			res.send(Promise.reject())
 		});
 
 	// Close the browser instance
-	await browser.close();
+	// await browser.close();
 
-	res.send(Promise.resolve())
+	// res.send(Promise.resolve())
 
 });
 
