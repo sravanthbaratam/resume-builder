@@ -4,9 +4,12 @@ const cors = require('cors')
 
 // const pdf = require("html-pdf");
 const path = require("path");
-
+const corsOptions = {
+	origin: 'https://resume-builder-c7kg.onrender.com/',
+	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 const app = express();
-app.use(cors())
+app.use(cors(corsOptions))
 
 const pdfTemplate = require("./documents");
 const puppeteer = require('puppeteer');
